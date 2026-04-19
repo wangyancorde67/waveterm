@@ -30,3 +30,5 @@ require (
 	github.com/yusufpapurcu/wmi v1.2.4 // indirect
 	go.uber.org/atomic v1.11.0 // indirect
 )
+
+// personal fork - upgrading crypto and sys to latest patch versions for security fixes
