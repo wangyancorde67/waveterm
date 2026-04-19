@@ -32,3 +32,4 @@ require (
 )
 
 // personal fork - upgrading crypto, sys, and term to latest patch versions for security fixes
+// TODO: look into replacing go-sqlite3 (cgo) with a pure-go sqlite driver to simplify cross-compilation
