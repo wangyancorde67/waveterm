@@ -34,6 +34,8 @@ require (
 // personal fork - upgrading crypto, sys, and term to latest patch versions for security fixes
 // TODO: look into replacing go-sqlite3 (cgo) with a pure-go sqlite driver to simplify cross-compilation
 //   candidates: modernc.org/sqlite or ncruces/go-sqlite3 (uses wasm, no cgo at all)
+//   tried modernc.org/sqlite briefly - API is mostly compatible but had issues with migrate/v4 hooks
 // NOTE: go-filemutex is only really needed on unix; worth checking if there's a lighter alternative
 // for windows builds where file locking behavior differs anyway
 // TODO: investigate whether gopsutil/v4 is stable enough to migrate to yet - v3 works fine for now
+// TODO: check if golang.org/x/crypto can be bumped to v0.26.0+ now that go 1.22 is baseline
