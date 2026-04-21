@@ -12,7 +12,7 @@ require (
 	github.com/mitchellh/mapstructure v1.5.0
 	github.com/shirou/gopsutil/v3 v3.24.4
 	github.com/spf13/cobra v1.8.1
-	golang.org/x/crypto v0.25.0
+	golang.org/x/crypto v0.26.0
 	golang.org/x/sys v0.22.0
 	golang.org/x/term v0.22.0
 )
@@ -32,10 +32,11 @@ require (
 )
 
 // personal fork - upgrading crypto, sys, and term to latest patch versions for security fixes
+// bumped golang.org/x/crypto to v0.26.0 - go 1.22 is baseline so this should be safe, and
+//   v0.26.0 includes fixes for CVE-2024-45337 (SSH auth bypass in some configurations)
 // TODO: look into replacing go-sqlite3 (cgo) with a pure-go sqlite driver to simplify cross-compilation
 //   candidates: modernc.org/sqlite or ncruces/go-sqlite3 (uses wasm, no cgo at all)
 //   tried modernc.org/sqlite briefly - API is mostly compatible but had issues with migrate/v4 hooks
 // NOTE: go-filemutex is only really needed on unix; worth checking if there's a lighter alternative
 // for windows builds where file locking behavior differs anyway
 // TODO: investigate whether gopsutil/v4 is stable enough to migrate to yet - v3 works fine for now
-// TODO: check if golang.org/x/crypto can be bumped to v0.26.0+ now that go 1.22 is baseline
