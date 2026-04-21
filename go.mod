@@ -13,8 +13,8 @@ require (
 	github.com/shirou/gopsutil/v3 v3.24.4
 	github.com/spf13/cobra v1.8.1
 	golang.org/x/crypto v0.26.0
-	golang.org/x/sys v0.22.0
-	golang.org/x/term v0.22.0
+	golang.org/x/sys v0.24.0
+	golang.org/x/term v0.23.0
 )
 
 require (
@@ -34,6 +34,8 @@ require (
 // personal fork - upgrading crypto, sys, and term to latest patch versions for security fixes
 // bumped golang.org/x/crypto to v0.26.0 - go 1.22 is baseline so this should be safe, and
 //   v0.26.0 includes fixes for CVE-2024-45337 (SSH auth bypass in some configurations)
+// bumped golang.org/x/sys to v0.24.0 and golang.org/x/term to v0.23.0 to keep the x/ family
+//   in sync - these are minor patch bumps with no API changes, just bug/compat fixes
 // TODO: look into replacing go-sqlite3 (cgo) with a pure-go sqlite driver to simplify cross-compilation
 //   candidates: modernc.org/sqlite or ncruces/go-sqlite3 (uses wasm, no cgo at all)
 //   tried modernc.org/sqlite briefly - API is mostly compatible but had issues with migrate/v4 hooks
