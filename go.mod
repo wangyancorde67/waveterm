@@ -42,3 +42,5 @@ require (
 // NOTE: go-filemutex is only really needed on unix; worth checking if there's a lighter alternative
 // for windows builds where file locking behavior differs anyway
 // TODO: investigate whether gopsutil/v4 is stable enough to migrate to yet - v3 works fine for now
+// NOTE: mousetrap (indirect via cobra) is a Windows-only dep that detects if the binary was launched
+//   from Explorer rather than a terminal - not really relevant for a terminal app but harmless to keep
